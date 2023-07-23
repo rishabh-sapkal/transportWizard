@@ -1,0 +1,35 @@
+.nav-bar {
+  width: 100%;
+  display: flex;
+  
+  .logo {
+    flex: 0.4;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav {
+    flex: 0.6;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ul {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      list-style-type: none;
+
+      li {
+        padding: 10px;
+        min-width: 50px;
+        border: 1px solid #0078d7;
+        font-weight: 12px;
+        margin-right: 20px;
+        & a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
