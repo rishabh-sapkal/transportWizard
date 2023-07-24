@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="145" height="73" viewBox="0 0 145 73">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="145" height="73" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Repeat_Grid_32" data-name="Repeat Grid 32" clip-path="url(#clip-path)">
+    <g transform="translate(110 -356)">
+      <text id="SPRINGS_" data-name="SPRINGS
+" transform="translate(-110 385)" fill="#ffd100" font-size="32" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">SPRINGS</tspan><tspan font-family="HelveticaNeue-Bold, Helvetica Neue"><tspan x="0" y="37"></tspan></tspan></text>
+      <text id="_NON_EMERGENCY_MEDICAL_TRANSPORTATION" data-name="
+         NON EMERGENCY 
+MEDICAL TRANSPORTATION" transform="translate(-110 391)" fill="#004fe5" font-size="10" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0"></tspan><tspan x="0" y="11" xml:space="preserve">        </tspan><tspan y="11" xml:space="preserve" fill="#fff"> NON EMERGENCY </tspan><tspan fill="#fff"><tspan x="0" y="22">MEDICAL TRANSPORTATION</tspan></tspan></text>
+    </g>
+  </g>
+</svg>
