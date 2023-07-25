@@ -50,16 +50,16 @@
   <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
     <ul class="navbar-nav mx-auto text-center">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/">Our Service </a>
+        <a class="nav-link" routerLink="/our-services">Our Service </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/book-a-ride">Book-A-RIde</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="">FAQs</a>
+        <a class="nav-link" (click)="handleNavigation('faq')">FAQs</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" (click)="handleNavigation('contactUs')">Contact</a>
       </li>
     </ul>
     <ul class="nav navbar-nav flex-row justify-content-center flex-nowrap">
