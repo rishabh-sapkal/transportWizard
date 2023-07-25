@@ -7,6 +7,7 @@ import { BookarideComponent } from './bookaride/bookaride.component';
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'book-a-ride', component: BookarideComponent},
+  {path: 'our-services', component: OurServicesComponent},
   { path: '',   redirectTo: 'home', pathMatch: 'full' }, // redirect to `home-componenet`
 ];
 
