@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { SectionsComponent } from './sections/sections.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SectionsComponent } from './sections/sections.component';
     HomeComponent,
     NavigationBarComponent,
     OurServicesComponent,
-    SectionsComponent
+    SectionsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
