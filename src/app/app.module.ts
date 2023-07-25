@@ -11,6 +11,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { SectionsComponent } from './sections/sections.component';
 import { FooterComponent } from './footer/footer.component';
+import { BookarideComponent } from './bookaride/bookaride.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FooterComponent } from './footer/footer.component';
     NavigationBarComponent,
     OurServicesComponent,
     SectionsComponent,
-    FooterComponent
+    FooterComponent,
+    BookarideComponent
   ],
   imports: [
     BrowserModule,

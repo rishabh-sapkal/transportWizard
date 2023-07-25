@@ -1,29 +1,70 @@
-<p>footer works!</p>
-
-<footer
-  style="
+<footer style="
     background-color: black;
-    height: 600px;
+    height: 800px;
     width: 100%;
     margin: 0;
     padding: 0;
-  "
->
+     
+  ">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 d-flex justify-content-center bg-light">
+      <div class="col-md-6 justify-content-center" style="margin-top: 100px; ">
         <!-- Content for Section 1 goes here -->
-        <h2>Section 1</h2>
-        <p>This is the content of Section 1.</p>
+        <h2 style="color: white;">Contact Us</h2>
+        <p style="color: white;">
+          Connect with a member of<br>
+          our team to get more information <br>
+          about our services.</p><br> <br>
+        <p style="color: white;">​Contact Details <br>
+          Address : <br>
+          Phone : 719-755-8510 <br>
+          Email : springsmedride55@gmail.com <br>
+          ​
+          Hours of Operations <br>
+          Monday - Friday 4 AM -- 7 PM <br>
+          Rides Available 24/7</p>
       </div>
 
-      <div
-        class="col-md-6 d-flex justify-content-center bg-secondary text-light"
-      >
+      <div class="col-md-6 justify-content-center bg-secondary" style="margin-top: 100px; border-radius: 6px;
+    padding-bottom: 10px;">
         <!-- Content for Section 2 goes here -->
-        <h2>Section 2</h2>
-        <p>This is the content of Section 2.</p>
+        <div class="container mt-5">
+          <h2>Contact Form</h2>
+          <form novalidate>
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name"
+                required>
+              <div class="invalid-feedback">Please enter your full name.</div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number"
+                required>
+              <div class="invalid-feedback">Please enter a valid phone number.</div>
+            </div>
+            <div class="mb-3">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter the subject"
+                required>
+              <div class="invalid-feedback">Please enter the subject.</div>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" name="message" rows="5" placeholder="Enter your message"
+                required></textarea>
+              <div class="invalid-feedback">Please enter your message.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
+  <span style="color: white">@ Copyright 2023 SPRINGS TRANSPORTATION | Web designed by web innovative Tech.</span>
 </footer>
