@@ -1,3 +1,33 @@
+<style>
+    /* Center the text inside the card body */
+    .card-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Add cool shadow to the cards */
+    .card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+        /* Optional: Adjust shadow properties for your preferred look */
+        border-radius: 9px;
+
+    }
+
+    p>img {
+        padding-left: 24px;
+    }
+
+    .heights-css {
+        height: 100px;
+    }
+
+    .accordion-item {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+
+    }
+</style>
+
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
@@ -21,48 +51,42 @@
 </div>
 
 <!-- our service -->
-<h3 class="card-title fs-1" style="text-align: center">Our Service</h3>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-12">
+<h3 class="card-title fs-1 mt-4" style="text-align: center">Our Service</h3>
+<div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-5">
+        <div class="col mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="card-title">Appointment</h3>
-                    <!-- <p class="card-text">This is the text for card 1.</p> -->
-                </div>
-            </div>
-        </div>
+                    Appointment
 
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Hospital Discharges</h3>
-                    <!-- <p class="card-text">This is the text for card 2.</p> -->
                 </div>
             </div>
         </div>
-
-        <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="col mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="card-title">Behavioral Health Visits</h3>
-                    <!-- <p class="card-text">This is the text for card 2.</p> -->
+                    Hospital Discharges
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="col mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="card-title">Child Health Visit</h3>
-                    <!-- <p class="card-text">This is the text for card 2.</p> -->
+                    Behavioral Health Visits
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="col mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="card-title">Lab Appointment</h3>
-                    <!-- <p class="card-text">This is the text for card 2.</p> -->
+                    Child Health Visit
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card">
+                <div class="card-body">
+                    Lab Appointment
                 </div>
             </div>
         </div>
@@ -75,9 +99,9 @@
         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
             <div class="card">
                 <img src="/assets/NoPath_-_Copy_2@2x.png" class="card-img-top" alt="Image 1" />
-                <div class="card-body">
+                <div class="card-body heights-css">
                     <h5 class="card-title">Outpatient Clinic</h5>
-                    <p class="card-text">This is the text for card 1.</p>
+                    <p class="card-text"><img src="/assets/arrow.svg"></p>
                 </div>
             </div>
         </div>
@@ -85,9 +109,9 @@
         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
             <div class="card">
                 <img src="assets/pexels-matthias-zomer-339620.png" class="card-img-top" alt="Image 2" />
-                <div class="card-body">
+                <div class="card-body heights-css">
                     <h5 class="card-title">Physical Therapy</h5>
-                    <p class="card-text">This is the text for card 2.</p>
+                    <p class="card-text"><img src="/assets/arrow.svg"></p>
                 </div>
             </div>
         </div>
@@ -95,9 +119,9 @@
         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
             <div class="card">
                 <img src="assets/NoPath.png" class="card-img-top" alt="Image 3" />
-                <div class="card-body">
+                <div class="card-body heights-css">
                     <h5 class="card-title">Parental Appointment</h5>
-                    <p class="card-text">This is the text for card 3.</p>
+                    <p class="card-text"><img src="/assets/arrow.svg"></p>
                 </div>
             </div>
         </div>
@@ -105,9 +129,9 @@
         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
             <div class="card">
                 <img src="assets/NoPath_-_Copy.png" class="card-img-top" alt="Image 4" />
-                <div class="card-body">
+                <div class="card-body heights-css">
                     <h5 class="card-title">Dialysis Treatment</h5>
-                    <p class="card-text">This is the text for card 4.</p>
+                    <p class="card-text"><img src="/assets/arrow.svg"></p>
                 </div>
             </div>
         </div>
@@ -116,9 +140,9 @@
             <div class="card">
                 <img src="assets/pexels-polina-tankilevitch-3735709.jpg" class="card-img-top" alt="Image 5"
                     style="height: 242px;" />
-                <div class="card-body">
+                <div class="card-body heights-css">
                     <h5 class="card-title">Radiation/Lab Appt</h5>
-                    <p class="card-text">This is the text for card 5.</p>
+                    <p class="card-text"><img src="/assets/arrow.svg"></p>
                 </div>
             </div>
         </div>
@@ -126,9 +150,9 @@
         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
             <div class="card">
                 <img src="assets/pexels-anna-shvets-3845806.png" class="card-img-top" alt="Image 6" />
-                <div class="card-body">
+                <div class="card-body heights-css">
                     <h5 class="card-title">Dental Clinics</h5>
-                    <p class="card-text">This is the text for card 6.</p>
+                    <p class="card-text"><img src="/assets/arrow.svg"></p>
                 </div>
             </div>
         </div>
@@ -174,11 +198,11 @@
 </div>
 
 <!-- FAQ -->
-<h3 #faq class="card-title fs-2" style="text-align: center">FAQs</h3>
-<div class="accordion" id="accordionPanelsStayOpenExample">
-    <div class="accordion-item">
+<h3 #faq class="card-title fs-2 mt-4" style="text-align: center; ">FAQs</h3>
+<div class="accordion" id="accordionPanelsStayOpenExample" style="padding: 49px;">
+    <div class=" accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" style="font-size: 30px;"
                 data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
                 aria-controls="panelsStayOpen-collapseOne">
                 Q. Who is eligible for NEMT services?
@@ -187,7 +211,7 @@
         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
             aria-labelledby="panelsStayOpen-headingOne">
             <div class="accordion-body">
-                A.NEMT services typically offer a range of transportation options,
+                A. NEMT services typically offer a range of transportation options,
                 including wheelchair-accessible vehicles, sedans, vans, or specialized
                 vehicles equipped with medical equipment, based on the individual's
                 needs.
@@ -196,7 +220,7 @@
     </div>
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" style="font-size: 30px;"
                 data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
                 aria-controls="panelsStayOpen-collapseTwo">
                 Q. How do I book NEMT services?
@@ -214,7 +238,7 @@
     </div>
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" style="font-size: 30px;"
                 data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
                 aria-controls="panelsStayOpen-collapseThree">
                 Q. Is NEMT available for wheelchair users or individuals with mobility

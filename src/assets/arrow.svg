@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 45 45">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="45" height="45" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect width="16.609" height="17.361" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Repeat_Grid_15" data-name="Repeat Grid 15" clip-path="url(#clip-path)">
+    <g transform="translate(-591 -1137)">
+      <g id="Ellipse_6" data-name="Ellipse 6" transform="translate(591 1137)" fill="#fff" stroke="#000" stroke-width="2">
+        <circle cx="22.5" cy="22.5" r="22.5" stroke="none"/>
+        <circle cx="22.5" cy="22.5" r="21.5" fill="none"/>
+      </g>
+      <g id="Repeat_Grid_6" data-name="Repeat Grid 6" transform="translate(607.391 1150.639)" clip-path="url(#clip-path-2)">
+        <g transform="translate(-467.263 -1252.315)">
+          <path id="Path_2" data-name="Path 2" d="M-.067,4.729" transform="translate(466.809 1270.876) rotate(-108)" fill="none" stroke="#000" stroke-width="2"/>
+          <path id="Path_3" data-name="Path 3" d="M5.786-2.564l6.5-3.6L15.734.05" transform="matrix(0.875, 0.485, -0.485, 0.875, 465.697, 1256.328)" fill="none" stroke="#000" stroke-width="2"/>
+          <line id="Line_7" data-name="Line 7" y1="12" x2="11" transform="translate(468 1257)" fill="none" stroke="#000" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
