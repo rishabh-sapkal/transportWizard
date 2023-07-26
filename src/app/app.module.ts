@@ -12,6 +12,22 @@ import {MatButtonModule} from '@angular/material/button';
 import { SectionsComponent } from './sections/sections.component';
 import { FooterComponent } from './footer/footer.component';
 import { BookarideComponent } from './bookaride/bookaride.component';
+// Import Firebase modules + environment
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDCuyQ4zAM9vjVHiQIT4RdMCQ4HdVtZICg",
+  authDomain: "transportwiz-40a1c.firebaseapp.com",
+  projectId: "transportwiz-40a1c",
+  storageBucket: "transportwiz-40a1c.appspot.com",
+  messagingSenderId: "1004183256292",
+  appId: "1:1004183256292:web:89a11821739e6d132d40f1"
+}
 
 @NgModule({
   declarations: [
@@ -21,16 +37,26 @@ import { BookarideComponent } from './bookaride/bookaride.component';
     OurServicesComponent,
     SectionsComponent,
     FooterComponent,
-    BookarideComponent
+    BookarideComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+
+ }
