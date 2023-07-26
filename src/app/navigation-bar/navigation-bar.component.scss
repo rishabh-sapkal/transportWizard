@@ -34,21 +34,6 @@
   }
 }
 
-// #Call_Customer_Service_303333-3 {
-//   left: 94px;
-//   top: 16px;
-//   position: absolute;
-//   overflow: visible;
-//   width: 966px;
-//   white-space: nowrap;
-//   text-align: left;
-//   font-family: Helvetica Neue;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 20px;
-//   color: rgba(255, 255, 255, 1);
-// }
-
 .mat-toolbar-single-row {
   margin-top: 29px;
   background: black;
@@ -62,4 +47,11 @@
 .nav-bar[_ngcontent-ng-c2457042804] .nav[_ngcontent-ng-c2457042804] ul[_ngcontent-ng-c2457042804] li[_ngcontent-ng-c2457042804] a[_ngcontent-ng-c2457042804]:hover {
   text-decoration: none;
   color: #FFD100;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  li.nav-item {
+      padding: 0px 39px 0 0;
+        font-size: 16px;
+    }
 }
