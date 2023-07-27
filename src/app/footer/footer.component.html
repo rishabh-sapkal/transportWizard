@@ -4,15 +4,13 @@
     float: right;
   }
 </style>
-<footer
-  style="
-    background-color: black;
+<footer style="
+    background-color: #212529;
     height: 800px;
     width: 100%;
     margin: 0;
     padding: 0;
-  "
->
+  ">
   <div #contactUs class="container mt-3">
     <div class="row">
       <div class="col-md-6 justify-content-center" style="margin-top: 100px">
@@ -36,105 +34,49 @@
         </p>
       </div>
 
-      <div
-        class="col-md-6 justify-content-center bg-secondary"
-        style="margin-top: 100px; border-radius: 6px; padding-bottom: 10px"
-      >
+      <div class="col-md-6 justify-content-center bg-secondary"
+        style="margin-top: 100px; border-radius: 6px; padding-bottom: 10px">
         <!-- Content for Section 2 goes here -->
         <div class="container mt-5">
           <h2>Contact Form</h2>
-          <form
-            [formGroup]="contactUsForm"
-            (ngSubmit)="submitContactData()"
-            novalidate
-          >
+          <form [formGroup]="contactUsForm" (ngSubmit)="submitContactData()" novalidate>
             <div class="mb-3">
               <label for="fullName" class="form-label">Full Name</label>
-              <input
-                formControlName="fullName"
-                type="text"
-                class="form-control"
-                id="fullName"
-                name="fullName"
-                placeholder="Enter your full name"
-                required
-              />
-              <div
-                *ngIf="fullName.touched && fullName.invalid"
-                class="invalid-feedback"
-              >
+              <input formControlName="fullName" type="text" class="form-control" id="fullName" name="fullName"
+                placeholder="Enter your full name" required />
+              <div *ngIf="fullName.touched && fullName.invalid" class="invalid-feedback">
                 Please enter your full name.
               </div>
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
-              <input
-                formControlName="email"
-                type="email"
-                class="form-control"
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                required
-              />
-              <div
-                *ngIf="email.touched && email.invalid"
-                class="invalid-feedback"
-              >
+              <input formControlName="email" type="email" class="form-control" id="email" name="email"
+                placeholder="Enter your email" required />
+              <div *ngIf="email.touched && email.invalid" class="invalid-feedback">
                 Please enter a valid email address.
               </div>
             </div>
             <div class="mb-3">
               <label for="phone" class="form-label">Phone</label>
-              <input
-                formControlName="phone"
-                type="tel"
-                class="form-control"
-                id="phone"
-                name="phone"
-                placeholder="Enter your phone number"
-                required
-              />
-              <div
-                *ngIf="phone.touched && phone.invalid"
-                class="invalid-feedback"
-              >
+              <input formControlName="phone" type="tel" class="form-control" id="phone" name="phone"
+                placeholder="Enter your phone number" required />
+              <div *ngIf="phone.touched && phone.invalid" class="invalid-feedback">
                 Please enter a valid phone number.
               </div>
             </div>
             <div class="mb-3">
               <label for="subject" class="form-label">Subject</label>
-              <input
-                formControlName="subject"
-                type="text"
-                class="form-control"
-                id="subject"
-                name="subject"
-                placeholder="Enter the subject"
-                required
-              />
-              <div
-                *ngIf="subject.touched && subject.invalid"
-                class="invalid-feedback"
-              >
+              <input formControlName="subject" type="text" class="form-control" id="subject" name="subject"
+                placeholder="Enter the subject" required />
+              <div *ngIf="subject.touched && subject.invalid" class="invalid-feedback">
                 Please enter the subject.
               </div>
             </div>
             <div class="mb-3">
               <label for="message" class="form-label">Message</label>
-              <textarea
-                formControlName="message"
-                class="form-control"
-                id="message"
-                name="message"
-                rows="5"
-                placeholder="Enter your message"
-                required
-              ></textarea>
-              <div
-                *ngIf="message.touched && message.invalid"
-                class="invalid-feedback"
-              >
+              <textarea formControlName="message" class="form-control" id="message" name="message" rows="5"
+                placeholder="Enter your message" required></textarea>
+              <div *ngIf="message.touched && message.invalid" class="invalid-feedback">
                 Please enter your message.
               </div>
             </div>
@@ -144,8 +86,7 @@
       </div>
     </div>
   </div>
-  <span style="color: white; font-size: 14px"
-    >@ Copyright 2023 SPRINGS TRANSPORTATION | Web designed by web innovative
-    Tech.</span
-  >
+  <span style="color: white; font-size: 12px; margin-left: 83px;">@ Copyright 2023 SPRINGS TRANSPORTATION | Web designed
+    by web innovative
+    Tech.</span>
 </footer>
