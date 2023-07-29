@@ -21,6 +21,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { FaqComponent } from './faq/faq.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDCuyQ4zAM9vjVHiQIT4RdMCQ4HdVtZICg',
@@ -40,6 +41,7 @@ const firebaseConfig = {
     SectionsComponent,
     FooterComponent,
     BookarideComponent,
+    FaqComponent,
   ],
   imports: [
     BrowserModule,
