@@ -1,8 +1,12 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BookARide, DatabaseOperationsService } from '../database-operations.service';
+import {
+  BookARide,
+  DatabaseOperationsService,
+} from '../database-operations.service';
 import { ToastrService } from 'ngx-toastr';
 import { AnchorNavigationService } from '../anchor-navigation.service';
+import { MailerService } from '../mailer.service';
 
 @Component({
   selector: 'app-bookaride',
@@ -10,12 +14,18 @@ import { AnchorNavigationService } from '../anchor-navigation.service';
   styleUrls: ['./bookaride.component.scss'],
 })
 export class BookarideComponent implements OnInit {
-  @ViewChild('faq') faq! : ElementRef;
-  
+  @ViewChild('faq') faq!: ElementRef;
+
   public tripRequest: FormGroup;
   public personalInfo: FormGroup;
 
-  constructor(public fb: FormBuilder, private dbService : DatabaseOperationsService, public toastr: ToastrService, public anchorNavigationService : AnchorNavigationService) {}
+  constructor(
+    public fb: FormBuilder,
+    private dbService: DatabaseOperationsService,
+    public toastr: ToastrService,
+    public anchorNavigationService: AnchorNavigationService,
+    public mailerService: MailerService
+  ) {}
 
   ngOnInit(): void {
     this.createTripRequestForm();
@@ -23,12 +33,16 @@ export class BookarideComponent implements OnInit {
     this.handleFaqclick();
   }
 
-  handleFaqclick(){
-    this.anchorNavigationService.navigation$.subscribe((navigateTo: string)=>{
-      if(navigateTo === 'faq'){
-        this.faq.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
+  handleFaqclick() {
+    this.anchorNavigationService.navigation$.subscribe((navigateTo: string) => {
+      if (navigateTo === 'faq') {
+        this.faq.nativeElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'end',
+          inline: 'start',
+        });
       }
-    })
+    });
   }
 
   createTripRequestForm() {
@@ -105,14 +119,27 @@ export class BookarideComponent implements OnInit {
     return this.tripRequest.get('phone');
   }
 
-
-  submitDetails(){
-    console.log(this.personalInfo.value , this.tripRequest.value, 'FORM VALUE')
-    const bookingDetails = {...this.personalInfo.value, ...this.tripRequest.value}
-    console.log(bookingDetails)
+  submitDetails() {
+    console.log(this.personalInfo.value, this.tripRequest.value, 'FORM VALUE');
+    const bookingDetails = {
+      ...this.personalInfo.value,
+      ...this.tripRequest.value,
+    };
     this.dbService.addToBookARideList(bookingDetails);
-    this.toastr.success(
-      this.personalInfo.value.firstName + ' - Your details have been submitted Successfully!'
-    );
+    this.mailerService.send(bookingDetails).then((response) => {
+      if (response.status === 200){
+        this.toastr.success(
+          this.personalInfo.value.firstName +
+            ' - Your details have been submitted Successfully!'
+        );
+      }else{
+        this.toastr.error(
+          this.personalInfo.value.firstName +
+            ' - An error occured, please try later'
+        );
+      }
+    
+    });
+
   }
 }
