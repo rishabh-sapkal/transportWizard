@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BookARide, DatabaseOperationsService } from '../database-operations.service';
 import { ToastrService } from 'ngx-toastr';
+import { AnchorNavigationService } from '../anchor-navigation.service';
 
 @Component({
   selector: 'app-bookaride',
@@ -9,14 +10,25 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./bookaride.component.scss'],
 })
 export class BookarideComponent implements OnInit {
+  @ViewChild('faq') faq! : ElementRef;
+  
   public tripRequest: FormGroup;
   public personalInfo: FormGroup;
 
-  constructor(public fb: FormBuilder, private dbService : DatabaseOperationsService, public toastr: ToastrService) {}
+  constructor(public fb: FormBuilder, private dbService : DatabaseOperationsService, public toastr: ToastrService, public anchorNavigationService : AnchorNavigationService) {}
 
   ngOnInit(): void {
     this.createTripRequestForm();
     this.createPersonalInfoForm();
+    this.handleFaqclick();
+  }
+
+  handleFaqclick(){
+    this.anchorNavigationService.navigation$.subscribe((navigateTo: string)=>{
+      if(navigateTo === 'faq'){
+        this.faq.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
+      }
+    })
   }
 
   createTripRequestForm() {
