@@ -1,3 +1,11 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 758px;
+    margin-top: 20px;
+}
 .custom-border {
     border: 2px solid black;
     width: 100%;
@@ -18,4 +26,11 @@
     color: white;
     background-color: black;
     border-color: #ced4da;
+}
+
+.footerButtonsContainer{
+    display: flex;
+    button{
+        margin-right: 20px;
+    }
 }
