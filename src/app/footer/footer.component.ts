@@ -2,6 +2,8 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { AnchorNavigationService } from '../anchor-navigation.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatabaseOperationsService } from '../database-operations.service';
+import { MailerService } from '../mailer.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-footer',
@@ -14,7 +16,10 @@ export class FooterComponent {
 
   public contactUsForm: FormGroup;
   
-  constructor(  private anchorNavigationService: AnchorNavigationService ,  public fb: FormBuilder, private dbService: DatabaseOperationsService){
+  constructor(  private anchorNavigationService: AnchorNavigationService ,  
+    public fb: FormBuilder, private dbService: DatabaseOperationsService,
+    public toastr: ToastrService,
+    public mailerService: MailerService){
 
   }
 
@@ -65,11 +70,24 @@ export class FooterComponent {
   }
 
   submitContactData() {
-    console.log(this.contactUsForm.value, 'CONTACT US')
-    this.dbService.addToContactUsList(this.contactUsForm.value);
-    // this.toastr.success(
-    //   this.studentForm.controls['firstName'].value + ' successfully added!'
-    // );
+    const contacDetails = this.contactUsForm.value;
+    console.log(contacDetails, 'CONTACT US')
+
+    this.dbService.addToContactUsList(contacDetails);
+    this.mailerService.sendContactDetails(contacDetails).then((response) => {
+      if (response.status === 200){
+        this.toastr.success(
+          contacDetails.fullName +
+            ' - Your details have been submitted Successfully!'
+        );
+      }else{
+        this.toastr.error(
+          contacDetails.fullName +
+            ' - An error occured, please try later'
+        );
+      }
+    
+    });
     this.ResetForm();
   }
 }

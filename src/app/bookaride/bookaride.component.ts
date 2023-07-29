@@ -120,13 +120,12 @@ export class BookarideComponent implements OnInit {
   }
 
   submitDetails() {
-    console.log(this.personalInfo.value, this.tripRequest.value, 'FORM VALUE');
     const bookingDetails = {
       ...this.personalInfo.value,
       ...this.tripRequest.value,
     };
     this.dbService.addToBookARideList(bookingDetails);
-    this.mailerService.send(bookingDetails).then((response) => {
+    this.mailerService.sendRideDetails(bookingDetails).then((response) => {
       if (response.status === 200){
         this.toastr.success(
           this.personalInfo.value.firstName +
