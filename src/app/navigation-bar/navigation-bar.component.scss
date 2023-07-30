@@ -49,9 +49,18 @@
   color: #FFD100;
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  li.nav-item {
-      padding: 0px 39px 0 0;
-        font-size: 16px;
+@media (min-width: 425px) {
+  div.formally-text {
+        text-align: center;
+          margin-left: 87px;
+          font-size: 9px;
+  }
+
+    div img.main-container {
+          height: 200px; /*??*/
     }
+
+    .video-css {
+          margin-top:20px;
+        }
 }
