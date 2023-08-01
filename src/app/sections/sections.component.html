@@ -1,4 +1,28 @@
 <style>
+  /* Custom styles for the button */
+  .custom-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #90c402 !important;
+    /* Green background color */
+    color: #ffffff;
+    /* White text color */
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow effect */
+    cursor: pointer;
+  }
+
+  /* Hover effect */
+  .custom-button:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Increase shadow on hover */
+  }
+
   /* Center the text inside the card body */
   .card-body {
     display: flex;
@@ -35,18 +59,38 @@
   }
 </style>
 
-<div style=" background-color: #212529; height: 800px; width: 100%;">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <!-- Use the "img-fluid" class to make the image responsive and take up 100% width -->
-        <div class="img-wrapper">
-          <img src="assets/responive-image1.png" class="img-fluid centered-image" alt="Responsive Image">
+<div class="container" style="min-width: 100%;">
+  <!-- Single row with two columns -->
+  <div class="row">
+    <div class="col-12 col-md-6" style="background-color: #ffd100;">
+      <!-- Content for the first column -->
+      <div class="col" style="width: 72%;
+    padding: 10px;
+    padding: 89px 23px;
+        margin-left: 36px;
+">
+        <!-- Sentence to be centered -->
+        <h2 class=" responsive-text text-wrap" style="font-size: 70px;">Transportation with care and reliability.
+        </h2>
+        <p style="margin-left: 31px;
+                  text-align: left;
+                  font-size: 28px;">contact us for a ride!</p>
+        <div class="container mt-5">
+          <!-- Create a primary button -->
+          <button type="button" class="btn btn-primary custom-button">
+            <a class="nav-link" routerLink="/book-a-ride" [routerLinkActive]="['active']">Book-A-RIde</a>
+
+          </button>
         </div>
       </div>
     </div>
+    <div class="col-12 col-md-6">
+      <!-- Content for the second column -->
+      <img src="assets/section-pic.png" class="img-fluid centered-image" alt="Responsive Image" width="100%">
+    </div>
   </div>
 </div>
+
 <!-- our service -->
 <h3 class="card-title fs-1 mt-4" style="text-align: center">Our Service</h3>
 <p style="text-align: center;">Count on our dependable transportation solutions to provide hassle-free outpatient rides,
@@ -162,7 +206,7 @@
 <!-- two sections - desc details on the trans. company -->
 <div style="
     background-color: #eeeeee;
-    height: 600px;
+        height: 480px;
     width: 100%;
     margin-top: 20px;
   ">
@@ -170,7 +214,7 @@
     <div class="row">
       <div class="col-md-6 d-flex flex-column justify-content-center" style="margin-top: 10px">
         <!-- Content for Section 1 goes here -->
-        <p>
+        <p style="line-height: 2.5;">
           Welcome to Springs NEMT website, where reliable transportation meets
           compassionate care. We are dedicated to providing safe and accessible
           transportation solutions for your non-emergency medical needs. ​ NEMT

@@ -2,105 +2,77 @@
   .btn-primary {
     width: 200px;
   }
+
+  /* Custom styles for the button */
+  .custom-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    /* Green background color */
+    color: #ffffff;
+    /* White text color */
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow effect */
+    cursor: pointer;
+  }
+
+  /* Hover effect */
+  .custom-button:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Increase shadow on hover */
+  }
 </style>
-<div class="container">
-  <div class="containerForStepper">
+<div class="container book-ride-css">
+  <h3 class="mt-2">Book a Ride</h3>
+  <div class="containerForStepper" style="padding-bottom: 21px;">
     <mat-stepper>
       <mat-step editable="true" [stepControl]="tripRequest">
         <form [formGroup]="tripRequest">
           <ng-template matStepLabel>Fill Trip Details</ng-template>
           <!-- Pickup Address -->
           <div class="mb-3">
-            <label for="pickupStreet" class="form-label"
-              >Pickup Street Address</label
-            >
-            <input
-              formControlName="pickupStreet"
-              type="text"
-              class="form-control"
-              id="pickupStreet"
-              name="pickupStreet"
-              placeholder="Enter pickup street address"
-              required
-            />
+            <label for="pickupStreet" class="form-label">Pickup Street Address</label>
+            <input formControlName="pickupStreet" type="text" class="form-control" id="pickupStreet" name="pickupStreet"
+              placeholder="Enter pickup street address" required />
           </div>
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="pickupCity" class="form-label">Pickup City</label>
-              <input
-                formControlName="pickupCity"
-                type="text"
-                class="form-control"
-                id="pickupCity"
-                name="pickupCity"
-                placeholder="Enter pickup city"
-                required
-              />
+              <input formControlName="pickupCity" type="text" class="form-control" id="pickupCity" name="pickupCity"
+                placeholder="Enter pickup city" required />
             </div>
             <div class="col-md-6 mb-3">
               <label for="pickupState" class="form-label">Pickup State</label>
-              <input
-                formControlName="pickupState"
-                type="text"
-                class="form-control"
-                id="pickupState"
-                name="pickupState"
-                placeholder="Enter pickup state"
-                required
-              />
+              <input formControlName="pickupState" type="text" class="form-control" id="pickupState" name="pickupState"
+                placeholder="Enter pickup state" required />
             </div>
           </div>
 
           <!-- Drop-off Address -->
           <div class="mb-3">
-            <label for="dropoffStreet" class="form-label"
-              >Drop-off Street Address</label
-            >
-            <input
-              type="text"
-              formControlName="dropoffStreet"
-              class="form-control"
-              id="dropoffStreet"
-              name="dropoffStreet"
-              placeholder="Enter drop-off street address"
-              required
-            />
+            <label for="dropoffStreet" class="form-label">Drop-off Street Address</label>
+            <input type="text" formControlName="dropoffStreet" class="form-control" id="dropoffStreet"
+              name="dropoffStreet" placeholder="Enter drop-off street address" required />
           </div>
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="dropoffCity" class="form-label">Drop-off City</label>
-              <input
-                type="text"
-                formControlName="dropoffCity"
-                class="form-control"
-                id="dropoffCity"
-                name="dropoffCity"
-                placeholder="Enter drop-off city"
-                required
-              />
+              <input type="text" formControlName="dropoffCity" class="form-control" id="dropoffCity" name="dropoffCity"
+                placeholder="Enter drop-off city" required />
             </div>
             <div class="col-md-6 mb-3">
-              <label for="dropoffState" class="form-label"
-                >Drop-off State</label
-              >
-              <input
-                type="text"
-                formControlName="dropoffState"
-                class="form-control"
-                id="dropoffState"
-                name="dropoffState"
-                placeholder="Enter drop-off state"
-                required
-              />
+              <label for="dropoffState" class="form-label">Drop-off State</label>
+              <input type="text" formControlName="dropoffState" class="form-control" id="dropoffState"
+                name="dropoffState" placeholder="Enter drop-off state" required />
             </div>
           </div>
           <div>
-            <button
-              mat-raised-button
-              color="primary"
-              matStepperNext
-              type="button"
-            >
+            <button mat-raised-button color="primary" matStepperNext type="button">
               Next
             </button>
           </div>
@@ -114,108 +86,52 @@
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName" class="form-label">First Name</label>
-              <input
-                type="text"
-                formControlName="firstName"
-                class="form-control"
-                id="firstName"
-                name="firstName"
-                placeholder="Enter first name"
-                required
-              />
+              <input type="text" formControlName="firstName" class="form-control" id="firstName" name="firstName"
+                placeholder="Enter first name" required />
             </div>
             <div class="col-md-6 mb-3">
               <label for="lastName" class="form-label">Last Name</label>
-              <input
-                type="text"
-                formControlName="lastName"
-                class="form-control"
-                id="lastName"
-                name="lastName"
-                placeholder="Enter last name"
-                required
-              />
+              <input type="text" formControlName="lastName" class="form-control" id="lastName" name="lastName"
+                placeholder="Enter last name" required />
             </div>
           </div>
 
           <!-- Date of Birth -->
           <div class="mb-3">
             <label for="dob" class="form-label">Date of Birth</label>
-            <input
-              type="date"
-              formControlName="dob"
-              class="form-control"
-              id="dob"
-              name="dob"
-              required
-            />
+            <input type="date" formControlName="dob" class="form-control" id="dob" name="dob" required />
           </div>
 
           <!-- Home Address -->
           <div class="mb-3">
             <label for="homeAddress" class="form-label">Home Address</label>
-            <input
-              type="text"
-              formControlName="homeAddress"
-              class="form-control"
-              id="homeAddress"
-              name="homeAddress"
-              placeholder="Enter home address"
-              required
-            />
+            <input type="text" formControlName="homeAddress" class="form-control" id="homeAddress" name="homeAddress"
+              placeholder="Enter home address" required />
           </div>
 
           <!-- Medical Number -->
           <div class="mb-3">
             <label for="medicalNumber" class="form-label">Medical Number</label>
-            <input
-              type="text"
-              formControlName="medicalNumber"
-              class="form-control"
-              id="medicalNumber"
-              name="medicalNumber"
-              placeholder="Enter medical number"
-              required
-            />
+            <input type="text" formControlName="medicalNumber" class="form-control" id="medicalNumber"
+              name="medicalNumber" placeholder="Enter medical number" required />
           </div>
 
           <!-- City, State, Zipcode -->
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="city" class="form-label">City</label>
-              <input
-                type="text"
-                formControlName="city"
-                class="form-control"
-                id="city"
-                name="city"
-                placeholder="Enter city"
-                required
-              />
+              <input type="text" formControlName="city" class="form-control" id="city" name="city"
+                placeholder="Enter city" required />
             </div>
             <div class="col-md-4 mb-3">
               <label for="state" class="form-label">State</label>
-              <input
-                type="text"
-                formControlName="state"
-                class="form-control"
-                id="state"
-                name="state"
-                placeholder="Enter state"
-                required
-              />
+              <input type="text" formControlName="state" class="form-control" id="state" name="state"
+                placeholder="Enter state" required />
             </div>
             <div class="col-md-2 mb-3">
               <label for="zipcode" class="form-label">Zipcode</label>
-              <input
-                type="text"
-                formControlName="zipcode"
-                class="form-control"
-                id="zipcode"
-                name="zipcode"
-                placeholder="Enter zipcode"
-                required
-              />
+              <input type="text" formControlName="zipcode" class="form-control" id="zipcode" name="zipcode"
+                placeholder="Enter zipcode" required />
             </div>
           </div>
 
@@ -223,27 +139,13 @@
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="email" class="form-label">Email</label>
-              <input
-                type="email"
-                formControlName="email"
-                class="form-control"
-                id="email"
-                name="email"
-                placeholder="Enter email"
-                required
-              />
+              <input type="email" formControlName="email" class="form-control" id="email" name="email"
+                placeholder="Enter email" required />
             </div>
             <div class="col-md-6 mb-3">
               <label for="phone" class="form-label">Phone</label>
-              <input
-                type="tel"
-                formControlName="phone"
-                class="form-control"
-                id="phone"
-                name="phone"
-                placeholder="Enter phone number"
-                required
-              />
+              <input type="tel" formControlName="phone" class="form-control" id="phone" name="phone"
+                placeholder="Enter phone number" required />
             </div>
           </div>
 
@@ -253,13 +155,7 @@
             <button mat-raised-button matStepperPrevious type="button">
               Back
             </button>
-            <button
-              mat-raised-button
-              color="accent"
-              mat-button
-              matStepperNext
-              type="submit"
-            >
+            <button mat-raised-button color="accent" mat-button matStepperNext type="submit">
               Submit
             </button>
           </div>
@@ -268,7 +164,8 @@
     </mat-stepper>
   </div>
   <!-- FAQ -->
-  <div #faq>
-    <app-faq></app-faq>
-  </div>
+
+</div>
+<div #faq class="mt-5">
+  <app-faq></app-faq>
 </div>

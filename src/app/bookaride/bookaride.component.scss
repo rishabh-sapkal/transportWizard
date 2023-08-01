@@ -1,3 +1,13 @@
+// button color change
+.mat-mdc-raised-button.mat-primary {
+    background-color: #90c402;
+}
+
+.mat-step-icon-selected { 
+    background-color: #90c402;
+        // background-color: var(--mat-stepper-header-selected-state-icon-background-color);
+}
+
 .container{
     display: flex;
     align-items: center;
@@ -6,6 +16,15 @@
     max-width: 758px;
     margin-top: 20px;
 }
+.book-ride-css {
+    background-color: #dbdcdd;
+    border-radius: 5px;
+}
+
+.mat-step-icon {
+    background-color: green;
+}
+
 .custom-border {
     border: 2px solid black;
     width: 100%;
