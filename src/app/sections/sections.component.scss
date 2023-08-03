@@ -1,3 +1,81 @@
 .nav-link {
-    color: white;
+  color: white;
+}
+
+.right-side-pic {
+  padding: 0px;
+}
+
+.left-image {
+  background-color: #ffd100;
+  display: grid;
+  place-items: center;
+}
+.responsive-text {
+  font-size: 70px;
+  margin-left: 87px;
+}
+
+.contact-text {
+  margin-left: 85px;
+  text-align: left;
+  font-size: 28px;
+}
+
+/* Hover effect */ /* Increase shadow on hover */
+.custom-button:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.btn-container {
+  margin-left: 63px;
+}
+
+// video & welcome section
+.welcome-css {
+  background-color: #eeeeee;
+  height: 480px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+//accordion
+.accordion {
+  // padding: 15px 185px;
+}
+
+@media (max-width: 1024px) {
+  .responsive-text {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-text {
+    font-size: 29px;
+    text-align: left;
+  }
+  .contact-text {
+    font-size: 18px;
+  }
+  .welcome-css {
+    height: 580px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 425px) {
+  .responsive-text {
+    font-size: 32px;
+  }
+  .contact-text {
+    font-size: 18px;
+  }
+  .custom-button {
+    padding: 0px;
+    text-align: center;
+    padding: 0px 15px;
+  }
+  .mt-5 {
+    margin-bottom: 10px;
+  }
 }

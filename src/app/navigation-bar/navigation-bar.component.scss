@@ -1,7 +1,7 @@
 .nav-bar {
   width: 100%;
   display: flex;
-  
+
   .logo {
     flex: 0.4;
     display: flex;
@@ -33,7 +33,7 @@
     }
   }
 }
-.active{
+.active {
   color: #90c402 !important;
 }
 
@@ -55,28 +55,38 @@ li.nav-item {
   background: black;
 }
 
-.nav-bar[_ngcontent-ng-c2457042804] .nav[_ngcontent-ng-c2457042804] ul[_ngcontent-ng-c2457042804] li[_ngcontent-ng-c2457042804] a[_ngcontent-ng-c2457042804] {
+.nav-bar[_ngcontent-ng-c2457042804]
+  .nav[_ngcontent-ng-c2457042804]
+  ul[_ngcontent-ng-c2457042804]
+  li[_ngcontent-ng-c2457042804]
+  a[_ngcontent-ng-c2457042804] {
   text-decoration: none;
   color: white;
 }
 
-.nav-bar[_ngcontent-ng-c2457042804] .nav[_ngcontent-ng-c2457042804] ul[_ngcontent-ng-c2457042804] li[_ngcontent-ng-c2457042804] a[_ngcontent-ng-c2457042804]:hover {
+.nav-bar[_ngcontent-ng-c2457042804]
+  .nav[_ngcontent-ng-c2457042804]
+  ul[_ngcontent-ng-c2457042804]
+  li[_ngcontent-ng-c2457042804]
+  a[_ngcontent-ng-c2457042804]:hover {
   text-decoration: none;
-  color: #FFD100;
+  color: #ffd100;
 }
 
-@media (min-width: 425px) {
-  div.formally-text {
-        text-align: center;
-          margin-left: 87px;
-          font-size: 9px;
+@media (max-width: 768px) {
+  li.nav-item {
+    padding: 0px;
+    font-size: 15px;
+    margin-left: 10px;
+    font-size: 13px;
   }
+}
 
-    div img.main-container {
-          height: 200px; /*??*/
-    }
-
-    .video-css {
-          margin-top:20px;
-        }
+@media (max-width: 425px) {
+  li.nav-item {
+    padding: 0px;
+    font-size: 15px;
+    margin-left: 10px;
+    font-size: 11px;
+  }
 }
