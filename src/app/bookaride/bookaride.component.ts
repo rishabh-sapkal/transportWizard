@@ -18,6 +18,7 @@ export class BookarideComponent implements OnInit {
 
   public tripRequest: FormGroup;
   public personalInfo: FormGroup;
+  firstStepCompleted = false;
 
   constructor(
     public fb: FormBuilder,
@@ -47,12 +48,12 @@ export class BookarideComponent implements OnInit {
 
   createTripRequestForm() {
     this.tripRequest = this.fb.group({
-      pickupStreet: [''],
-      pickupCity: ['', [Validators.required, Validators.minLength(2)]],
-      pickupState: [''],
-      dropoffStreet: [''],
-      dropoffCity: [''],
-      dropoffState: [''],
+      pickupStreet: ['',[Validators.required]],
+      pickupCity: ['', [Validators.required]],
+      pickupState: ['',[Validators.required]],
+      dropoffStreet: ['',[Validators.required]],
+      dropoffCity: ['',[Validators.required]],
+      dropoffState: ['',[Validators.required]],
     });
   }
 
@@ -79,15 +80,15 @@ export class BookarideComponent implements OnInit {
   createPersonalInfoForm() {
     this.personalInfo = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(2)]],
-      lastName: [''],
-      dob: [''],
-      homeAddress: [''],
-      medicalNumber: [''],
-      city: [''],
-      state: [''],
-      zipcode: [''],
-      email: [''],
-      phone: [''],
+      lastName: ['',[Validators.required]],
+      dob: ['',[Validators.required]],
+      homeAddress: ['',[Validators.required]],
+      medicalNumber: ['',[Validators.pattern("^((\\+1-?)|0)?[0-9]{10}$")]],
+      city: ['',[Validators.required]],
+      state: ['',[Validators.required]],
+      zipcode: ['',[Validators.required]],
+      email: ['', [Validators.required,Validators.email]],
+      phone: ['',[Validators.required, Validators.pattern("^((\\+1-?)|0)?[0-9]{10}$")]],
     });
   }
 
@@ -109,6 +110,9 @@ export class BookarideComponent implements OnInit {
   get city() {
     return this.tripRequest.get('city');
   }
+  get state() {
+    return this.tripRequest.get('state');
+  }
   get zipcode() {
     return this.tripRequest.get('zipcode');
   }
@@ -120,25 +124,36 @@ export class BookarideComponent implements OnInit {
   }
 
   submitDetails() {
-    const bookingDetails = {
-      ...this.personalInfo.value,
-      ...this.tripRequest.value,
-    };
-    this.dbService.addToBookARideList(bookingDetails);
-    this.mailerService.sendRideDetails(bookingDetails).then((response) => {
-      if (response.status === 200){
-        this.toastr.success(
-          this.personalInfo.value.firstName +
-            ' - Your details have been submitted Successfully!'
-        );
-      }else{
-        this.toastr.error(
-          this.personalInfo.value.firstName +
-            ' - An error occured, please try later'
-        );
-      }
-    
-    });
+    if(this.personalInfo.valid && this.tripRequest.valid){
+      const bookingDetails = {
+        ...this.personalInfo.value,
+        ...this.tripRequest.value,
+      };
+      this.dbService.addToBookARideList(bookingDetails);
+      this.mailerService.sendRideDetails(bookingDetails).then((response) => {
+        if (response.status === 200){
+          this.toastr.success(
+            this.personalInfo.value.firstName +
+              ' - Your details have been submitted Successfully!'
+          );
+        }else{
+          this.toastr.error(
+            this.personalInfo.value.firstName +
+              ' - An error occured, please try later'
+          );
+        }
+      
+      });
+    }else{
+      this.toastr.error(
+          ' Please fill all the Required details'
+      );
+    }
 
+
+  }
+
+  toggleStep(){
+    this.firstStepCompleted = true;
   }
 }
