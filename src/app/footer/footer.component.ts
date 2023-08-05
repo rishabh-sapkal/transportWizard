@@ -55,10 +55,10 @@ export class FooterComponent {
         '',
         [
           Validators.required,
-          Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'),
+          Validators.email,
         ],
       ],
-      phone: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+      phone: ['', [Validators.required, Validators.pattern("^((\\+1-?)|0)?[0-9]{10}$")]],
       subject: [''],
       message: [''],
     });

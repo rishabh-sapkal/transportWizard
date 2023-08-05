@@ -18,6 +18,7 @@ export class BookarideComponent implements OnInit {
 
   public tripRequest: FormGroup;
   public personalInfo: FormGroup;
+  firstStepCompleted = false;
 
   constructor(
     public fb: FormBuilder,
@@ -47,12 +48,12 @@ export class BookarideComponent implements OnInit {
 
   createTripRequestForm() {
     this.tripRequest = this.fb.group({
-      pickupStreet: [''],
-      pickupCity: ['', [Validators.required, Validators.minLength(2)]],
-      pickupState: [''],
-      dropoffStreet: [''],
-      dropoffCity: [''],
-      dropoffState: [''],
+      pickupStreet: ['',[Validators.required]],
+      pickupCity: ['', [Validators.required]],
+      pickupState: ['',[Validators.required]],
+      dropoffStreet: ['',[Validators.required]],
+      dropoffCity: ['',[Validators.required]],
+      dropoffState: ['',[Validators.required]],
     });
   }
 
@@ -79,66 +80,80 @@ export class BookarideComponent implements OnInit {
   createPersonalInfoForm() {
     this.personalInfo = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(2)]],
-      lastName: [''],
-      dob: [''],
-      homeAddress: [''],
-      medicalNumber: [''],
-      city: [''],
-      state: [''],
-      zipcode: [''],
-      email: [''],
-      phone: [''],
+      lastName: ['',[Validators.required]],
+      dob: ['',[Validators.required]],
+      homeAddress: ['',[Validators.required]],
+      medicalNumber: ['',[Validators.pattern("^((\\+1-?)|0)?[0-9]{10}$")]],
+      city: ['',[Validators.required]],
+      state: ['',[Validators.required]],
+      zipcode: ['',[Validators.required]],
+      email: ['', [Validators.required,Validators.email]],
+      phone: ['',[Validators.required, Validators.pattern("^((\\+1-?)|0)?[0-9]{10}$")]],
     });
   }
 
   get firstName() {
-    return this.tripRequest.get('firstName');
+    return this.personalInfo.get('firstName');
   }
   get lastName() {
-    return this.tripRequest.get('lastName');
+    return this.personalInfo.get('lastName');
   }
   get dob() {
-    return this.tripRequest.get('dob');
+    return this.personalInfo.get('dob');
   }
   get homeAddress() {
-    return this.tripRequest.get('homeAddress');
+    return this.personalInfo.get('homeAddress');
   }
   get medicalNumber() {
-    return this.tripRequest.get('medicalNumber');
+    return this.personalInfo.get('medicalNumber');
   }
   get city() {
-    return this.tripRequest.get('city');
+    return this.personalInfo.get('city');
+  }
+  get state() {
+    return this.personalInfo.get('state');
   }
   get zipcode() {
-    return this.tripRequest.get('zipcode');
+    return this.personalInfo.get('zipcode');
   }
   get email() {
-    return this.tripRequest.get('email');
+    return this.personalInfo.get('email');
   }
   get phone() {
-    return this.tripRequest.get('phone');
+    return this.personalInfo.get('phone');
   }
 
   submitDetails() {
-    const bookingDetails = {
-      ...this.personalInfo.value,
-      ...this.tripRequest.value,
-    };
-    this.dbService.addToBookARideList(bookingDetails);
-    this.mailerService.sendRideDetails(bookingDetails).then((response) => {
-      if (response.status === 200){
-        this.toastr.success(
-          this.personalInfo.value.firstName +
-            ' - Your details have been submitted Successfully!'
-        );
-      }else{
-        this.toastr.error(
-          this.personalInfo.value.firstName +
-            ' - An error occured, please try later'
-        );
-      }
-    
-    });
+    if(this.personalInfo.valid && this.tripRequest.valid){
+      const bookingDetails = {
+        ...this.personalInfo.value,
+        ...this.tripRequest.value,
+      };
+      this.dbService.addToBookARideList(bookingDetails);
+      this.mailerService.sendRideDetails(bookingDetails).then((response) => {
+        if (response.status === 200){
+          this.toastr.success(
+            this.personalInfo.value.firstName +
+              ' - Your details have been submitted Successfully!'
+          );
+        }else{
+          this.toastr.error(
+            this.personalInfo.value.firstName +
+              ' - An error occured, please try later'
+          );
+        }
+      
+      });
+    }else{
+      this.toastr.error(
+          ' Please fill all the Required details'
+      );
+    }
 
+
+  }
+
+  toggleStep(){
+    this.firstStepCompleted = true;
   }
 }

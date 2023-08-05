@@ -7,7 +7,7 @@
   .custom-button {
     display: inline-block;
     padding: 12px 20px;
-    background-color: #4CAF50;
+    background-color: #4caf50;
     /* Green background color */
     color: #ffffff;
     /* White text color */
@@ -29,109 +29,294 @@
 </style>
 <div class="container book-ride-css">
   <h3 class="mt-2">Book a Ride</h3>
-  <div class="containerForStepper" style="padding-bottom: 21px;">
-    <mat-stepper>
-      <mat-step editable="true" [stepControl]="tripRequest">
+  <div class="containerForStepper" style="padding-bottom: 21px">
+    <mat-stepper [linear]="true">
+      <mat-step [stepControl]="tripRequest" [completed]="tripRequest.valid">
         <form [formGroup]="tripRequest">
           <ng-template matStepLabel>Fill Trip Details</ng-template>
           <!-- Pickup Address -->
           <div class="mb-3">
-            <label for="pickupStreet" class="form-label">Pickup Street Address</label>
-            <input formControlName="pickupStreet" type="text" class="form-control" id="pickupStreet" name="pickupStreet"
-              placeholder="Enter pickup street address" required />
+            <label for="pickupStreet" class="form-label"
+              >Pickup Street Address</label
+            >
+            <input
+              formControlName="pickupStreet"
+              type="text"
+              class="form-control"
+              id="pickupStreet"
+              name="pickupStreet"
+              placeholder="Enter pickup street address"
+              required
+            />
+            <div
+              *ngIf="pickupStreet.touched && pickupStreet.invalid"
+              class="invalid-feedback"
+            >
+              Please enter the pickupStreet.
+            </div>
           </div>
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="pickupCity" class="form-label">Pickup City</label>
-              <input formControlName="pickupCity" type="text" class="form-control" id="pickupCity" name="pickupCity"
-                placeholder="Enter pickup city" required />
+              <input
+                formControlName="pickupCity"
+                type="text"
+                class="form-control"
+                id="pickupCity"
+                name="pickupCity"
+                placeholder="Enter pickup city"
+                required
+              />
+              <div
+                *ngIf="pickupCity.touched && pickupCity.invalid"
+                class="invalid-feedback"
+              >
+                Please enter the Pickup City.
+              </div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="pickupState" class="form-label">Pickup State</label>
-              <input formControlName="pickupState" type="text" class="form-control" id="pickupState" name="pickupState"
-                placeholder="Enter pickup state" required />
+              <input
+                formControlName="pickupState"
+                type="text"
+                class="form-control"
+                id="pickupState"
+                name="pickupState"
+                placeholder="Enter pickup state"
+                required
+              />
+              <div
+                *ngIf="pickupState.touched && pickupState.invalid"
+                class="invalid-feedback"
+              >
+                Please enter the Pickup State.
+              </div>
             </div>
           </div>
 
           <!-- Drop-off Address -->
           <div class="mb-3">
-            <label for="dropoffStreet" class="form-label">Drop-off Street Address</label>
-            <input type="text" formControlName="dropoffStreet" class="form-control" id="dropoffStreet"
-              name="dropoffStreet" placeholder="Enter drop-off street address" required />
+            <label for="dropoffStreet" class="form-label"
+              >Drop-off Street Address</label
+            >
+            <input
+              type="text"
+              formControlName="dropoffStreet"
+              class="form-control"
+              id="dropoffStreet"
+              name="dropoffStreet"
+              placeholder="Enter drop-off street address"
+              required
+            />
+            <div
+              *ngIf="dropoffStreet.touched && dropoffStreet.invalid"
+              class="invalid-feedback"
+            >
+              Please enter the Dropoff Street.
+            </div>
           </div>
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="dropoffCity" class="form-label">Drop-off City</label>
-              <input type="text" formControlName="dropoffCity" class="form-control" id="dropoffCity" name="dropoffCity"
-                placeholder="Enter drop-off city" required />
+              <input
+                type="text"
+                formControlName="dropoffCity"
+                class="form-control"
+                id="dropoffCity"
+                name="dropoffCity"
+                placeholder="Enter drop-off city"
+                required
+              />
+              <div
+                *ngIf="dropoffCity.touched && dropoffCity.invalid"
+                class="invalid-feedback"
+              >
+                Please enter the Drop-off City.
+              </div>
             </div>
             <div class="col-md-6 mb-3">
-              <label for="dropoffState" class="form-label">Drop-off State</label>
-              <input type="text" formControlName="dropoffState" class="form-control" id="dropoffState"
-                name="dropoffState" placeholder="Enter drop-off state" required />
+              <label for="dropoffState" class="form-label"
+                >Drop-off State</label
+              >
+              <input
+                type="text"
+                formControlName="dropoffState"
+                class="form-control"
+                id="dropoffState"
+                name="dropoffState"
+                placeholder="Enter drop-off state"
+                required
+              />
+              <div
+                *ngIf="dropoffState.touched && dropoffState.invalid"
+                class="invalid-feedback"
+              >
+                Please enter the drop-off State.
+              </div>
             </div>
           </div>
           <div>
-            <button mat-raised-button color="primary" matStepperNext type="button">
+            <button
+              mat-raised-button
+              color="primary"
+              matStepperNext
+              type="button"
+              [disabled]="!tripRequest.valid"
+              (click)="toggleStep()"
+            >
               Next
             </button>
           </div>
         </form>
       </mat-step>
 
-      <mat-step editable="true" [stepControl]="personalInfo">
+      <mat-step [stepControl]="personalInfo">
         <form [formGroup]="personalInfo" (ngSubmit)="submitDetails()">
           <ng-template matStepLabel>Fill Personal Info</ng-template>
           <!-- First Name and Last Name -->
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName" class="form-label">First Name</label>
-              <input type="text" formControlName="firstName" class="form-control" id="firstName" name="firstName"
-                placeholder="Enter first name" required />
+              <input
+                type="text"
+                formControlName="firstName"
+                class="form-control"
+                id="firstName"
+                name="firstName"
+                placeholder="Enter first name"
+                required
+              />
+              <div
+                *ngIf="firstName.touched && firstName.invalid"
+                class="invalid-feedback"
+              >
+                Please enter the First Name.
+              </div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="lastName" class="form-label">Last Name</label>
-              <input type="text" formControlName="lastName" class="form-control" id="lastName" name="lastName"
-                placeholder="Enter last name" required />
+              <input
+                type="text"
+                formControlName="lastName"
+                class="form-control"
+                id="lastName"
+                name="lastName"
+                placeholder="Enter last name"
+                required
+              />
+              <div
+                *ngIf="lastName.touched && lastName.invalid"
+                class="invalid-feedback"
+              >
+                Please enter the Last Name.
+              </div>
             </div>
           </div>
 
           <!-- Date of Birth -->
           <div class="mb-3">
             <label for="dob" class="form-label">Date of Birth</label>
-            <input type="date" formControlName="dob" class="form-control" id="dob" name="dob" required />
+            <input
+              type="date"
+              formControlName="dob"
+              class="form-control"
+              id="dob"
+              name="dob"
+              required
+            />
+            <div *ngIf="dob.touched && dob.invalid" class="invalid-feedback">
+              Please enter the Date Of Birth.
+            </div>
           </div>
 
           <!-- Home Address -->
           <div class="mb-3">
             <label for="homeAddress" class="form-label">Home Address</label>
-            <input type="text" formControlName="homeAddress" class="form-control" id="homeAddress" name="homeAddress"
-              placeholder="Enter home address" required />
+            <input
+              type="text"
+              formControlName="homeAddress"
+              class="form-control"
+              id="homeAddress"
+              name="homeAddress"
+              placeholder="Enter home address"
+              required
+            />
+            <div
+              *ngIf="homeAddress.touched && homeAddress.invalid"
+              class="invalid-feedback"
+            >
+              Please enter the Home Address.
+            </div>
           </div>
 
           <!-- Medical Number -->
           <div class="mb-3">
             <label for="medicalNumber" class="form-label">Medical Number</label>
-            <input type="text" formControlName="medicalNumber" class="form-control" id="medicalNumber"
-              name="medicalNumber" placeholder="Enter medical number" required />
+            <input
+              type="text"
+              formControlName="medicalNumber"
+              class="form-control"
+              id="medicalNumber"
+              name="medicalNumber"
+              placeholder="Enter medical number"
+            />
           </div>
 
           <!-- City, State, Zipcode -->
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="city" class="form-label">City</label>
-              <input type="text" formControlName="city" class="form-control" id="city" name="city"
-                placeholder="Enter city" required />
+              <input
+                type="text"
+                formControlName="city"
+                class="form-control"
+                id="city"
+                name="city"
+                placeholder="Enter city"
+                required
+              />
+              <div
+                *ngIf="city.touched && city.invalid"
+                class="invalid-feedback"
+              >
+                Please enter the city.
+              </div>
             </div>
             <div class="col-md-4 mb-3">
               <label for="state" class="form-label">State</label>
-              <input type="text" formControlName="state" class="form-control" id="state" name="state"
-                placeholder="Enter state" required />
+              <input
+                type="text"
+                formControlName="state"
+                class="form-control"
+                id="state"
+                name="state"
+                placeholder="Enter state"
+                required
+              />
+              <div
+                *ngIf="state.touched && state.invalid"
+                class="invalid-feedback"
+              >
+                Please enter the state.
+              </div>
             </div>
             <div class="col-md-2 mb-3">
               <label for="zipcode" class="form-label">Zipcode</label>
-              <input type="text" formControlName="zipcode" class="form-control" id="zipcode" name="zipcode"
-                placeholder="Enter zipcode" required />
+              <input
+                type="text"
+                formControlName="zipcode"
+                class="form-control"
+                id="zipcode"
+                name="zipcode"
+                placeholder="Enter zipcode"
+                required
+              />
+              <div
+                *ngIf="zipcode.touched && zipcode.invalid"
+                class="invalid-feedback"
+              >
+                Please enter the zipcode.
+              </div>
             </div>
           </div>
 
@@ -139,13 +324,39 @@
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="email" class="form-label">Email</label>
-              <input type="email" formControlName="email" class="form-control" id="email" name="email"
-                placeholder="Enter email" required />
+              <input
+                type="email"
+                formControlName="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Enter email"
+                required
+              />
+              <div
+                *ngIf="email.touched && email.invalid"
+                class="invalid-feedback"
+              >
+                Please enter the email.
+              </div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="phone" class="form-label">Phone</label>
-              <input type="tel" formControlName="phone" class="form-control" id="phone" name="phone"
-                placeholder="Enter phone number" required />
+              <input
+                type="tel"
+                formControlName="phone"
+                class="form-control"
+                id="phone"
+                name="phone"
+                placeholder="Enter phone number"
+                required
+              />
+              <div
+                *ngIf="phone.touched && phone.invalid"
+                class="invalid-feedback"
+              >
+                Please enter the phone.
+              </div>
             </div>
           </div>
 
@@ -155,7 +366,15 @@
             <button mat-raised-button matStepperPrevious type="button">
               Back
             </button>
-            <button mat-raised-button class="submit-cta" color="accent" mat-button matStepperNext type="submit">
+            <button
+              mat-raised-button
+              class="submit-cta"
+              mat-raised-button
+              color="accent"
+              matStepperNext
+              type="submit"
+              [disabled]="!personalInfo.valid"
+            >
               Submit
             </button>
           </div>
@@ -164,7 +383,6 @@
     </mat-stepper>
   </div>
   <!-- FAQ -->
-
 </div>
 <div #faq class="mt-5">
   <app-faq></app-faq>
