@@ -93,34 +93,34 @@ export class BookarideComponent implements OnInit {
   }
 
   get firstName() {
-    return this.tripRequest.get('firstName');
+    return this.personalInfo.get('firstName');
   }
   get lastName() {
-    return this.tripRequest.get('lastName');
+    return this.personalInfo.get('lastName');
   }
   get dob() {
-    return this.tripRequest.get('dob');
+    return this.personalInfo.get('dob');
   }
   get homeAddress() {
-    return this.tripRequest.get('homeAddress');
+    return this.personalInfo.get('homeAddress');
   }
   get medicalNumber() {
-    return this.tripRequest.get('medicalNumber');
+    return this.personalInfo.get('medicalNumber');
   }
   get city() {
-    return this.tripRequest.get('city');
+    return this.personalInfo.get('city');
   }
   get state() {
-    return this.tripRequest.get('state');
+    return this.personalInfo.get('state');
   }
   get zipcode() {
-    return this.tripRequest.get('zipcode');
+    return this.personalInfo.get('zipcode');
   }
   get email() {
-    return this.tripRequest.get('email');
+    return this.personalInfo.get('email');
   }
   get phone() {
-    return this.tripRequest.get('phone');
+    return this.personalInfo.get('phone');
   }
 
   submitDetails() {
