@@ -58,6 +58,7 @@
 
 .footerButtonsContainer {
   display: flex;
+  justify-content: space-between;
   button {
     margin-right: 20px;
     width: 200px;
