@@ -2,15 +2,22 @@
   color: white;
 }
 
-.right-side-pic {
-  padding: 0px;
+//green btn section
+.column {
+  float: left;
+  width: 50%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.btn-css {
+  margin: 0 12px;
+  padding: 10px;
+  background-color: #ffd100;
 }
 
-.left-image {
-  background-color: #ffd100;
-  display: grid;
-  place-items: center;
-}
 .responsive-text {
   font-size: 70px;
   margin-left: 87px;

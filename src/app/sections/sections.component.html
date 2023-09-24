@@ -55,33 +55,23 @@
   }
 </style>
 
+
 <div class="container" style="min-width: 100%;">
-  <!-- Single row with two columns -->
-  <div class="row">
-    <div class="col-12 col-md-6 left-image">
-      <!-- Content for the first column -->
-      <div class="col">
-        <!-- Sentence to be centered -->
-        <h2 class=" responsive-text text-wrap">Transportation with care and reliability.
-        </h2>
-        <p class="contact-text" style="">Contact us for a ride! <br />
-          <span class="h5">(719)-755-8510</span>
-        </p>
+  <img src="assets/landscape-frontpic-transformed.jpeg" class="img-fluid centered-image" alt="Responsive Image"
+    width="100%">
+</div>
 
-        <div class="container mt-5 btn-container">
-          <!-- Create a primary button -->
-          <button type="button" class="btn btn-primary custom-button">
-            <a class="nav-link" routerLink="/book-a-ride" [routerLinkActive]="['active']">Book-A-RIde</a>
-
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 right-side-pic">
-      <!-- Content for the second column -->
-      <img src="assets/section-pic.png" class="img-fluid centered-image" alt="Responsive Image" width="100%">
-    </div>
+<!-- Create a primary button -->
+<div class="row btn-css btn-image-section">
+  <div class="column">
+    <p class="h1 pt-1">Would you like to book a ride now?</p>
   </div>
+  <div class="column">
+    <button type="button" class="btn btn-primary custom-button">
+      <a class="nav-link" routerLink="/book-a-ride" [routerLinkActive]="['active']">Book-A-RIde</a>
+    </button>
+  </div>
+
 </div>
 
 <!-- our service -->
