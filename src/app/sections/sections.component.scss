@@ -18,6 +18,19 @@
   background-color: #ffd100;
 }
 
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  // border: 1px solid #ccc;
+  text-align: center;
+}
+
 .responsive-text {
   font-size: 70px;
   margin-left: 87px;

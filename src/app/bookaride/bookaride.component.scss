@@ -69,7 +69,26 @@
   background-color: #90c402;
   //   text-align: right;
 }
-.containerForStepper{
+.containerForStepper {
   width: 100%;
-  padding-bottom: 21px
+  padding-bottom: 21px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.column {
+  flex: 1;
+  text-align: center;
+}
+
+.line {
+  flex: 1;
+  border-top: 1px solid #ccc;
+}
+
+.red-asterisk {
+  color: red;
 }
